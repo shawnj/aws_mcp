@@ -49,7 +49,7 @@ A Python-based Model Context Protocol (MCP) server that provides tools for acces
 ### Running the Server
 
 ```bash
-python main.py
+python aws_mcp/main.py
 ```
 
 The server will start and listen for MCP connections on stdio.
@@ -65,11 +65,15 @@ Add the following to your Claude Desktop configuration file:
 {
   "mcpServers": {
     "aws-cost-explorer": {
-      "command": "python",
-      "args": ["/absolute/path/to/aws_mcp/main.py"],
-      "env": {
-        "AWS_PROFILE": "your-profile-name"
-      }
+			"command": "uv",
+			"args": [
+				"--directory",
+				"/absolute/path/to/aws_mcp",
+				"run",
+				"aws-cost-explorer",
+				"--profile",
+				"oms-dev"
+			],
     }
   }
 }
