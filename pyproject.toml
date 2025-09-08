@@ -1,0 +1,20 @@
+[project]
+name = "aws-mcp"
+version = "0.1.0"
+description = "AWS Cost Explorer MCP"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    # Add your runtime dependencies here, e.g. "boto3"
+]
+
+[tool.setuptools]
+packages = ["aws_mcp"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[[project.authors]]
+name = "Jimmy None"
+email = "none@none.com"
