@@ -72,7 +72,7 @@ Add the following to your Claude Desktop configuration file:
 				"run",
 				"aws-cost-explorer",
 				"--profile",
-				"oms-dev"
+				"dev"
 			],
     }
   }

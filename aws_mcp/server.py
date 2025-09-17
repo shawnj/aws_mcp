@@ -181,7 +181,7 @@ class AWSCostExplorerMCPServer:
     ) -> str:
         """Get cost and usage data."""
         self.logger.info(f"Getting cost and usage: start={start}, end={end}, granularity={granularity}, group_by={group_by}, metrics={metrics}, filter_config={filter_config}, next_page_token={next_page_token}, profile={profile}")
-        client = AWSCostExplorerClient(profile)
+        client = AWSCostExplorerClient(profile or self.profile)
         service = CostExplorerService(client)
         result = await service.get_cost_and_usage(
             start=start,
@@ -207,7 +207,7 @@ class AWSCostExplorerMCPServer:
     ) -> str:
         """Get dimension values."""
         self.logger.info(f"Getting dimension values: dimension={dimension}, time_period_start={time_period_start}, time_period_end={time_period_end}, search_string={search_string}, max_results={max_results}, next_page_token={next_page_token}, profile={profile}")
-        client = AWSCostExplorerClient(profile)
+        client = AWSCostExplorerClient(profile or self.profile)
         service = CostExplorerService(client)
         result = await service.get_dimension_values(
             dimension=dimension,
