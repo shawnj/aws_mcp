@@ -65,11 +65,15 @@ Add the following to your Claude Desktop configuration file:
 {
   "mcpServers": {
     "aws-cost-explorer": {
-      "command": "python",
-      "args": ["/absolute/path/to/aws_mcp/main.py"],
-      "env": {
-        "AWS_PROFILE": "your-profile-name"
-      }
+			"command": "uv",
+			"args": [
+				"--directory",
+				"/absolute/path/to/aws_mcp",
+				"run",
+				"aws-cost-explorer",
+				"--profile",
+				"dev"
+			],
     }
   }
 }
