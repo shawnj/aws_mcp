@@ -49,7 +49,7 @@ A Python-based Model Context Protocol (MCP) server that provides tools for acces
 ### Running the Server
 
 ```bash
-python main.py
+python aws_mcp/main.py
 ```
 
 The server will start and listen for MCP connections on stdio.

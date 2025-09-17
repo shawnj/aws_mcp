@@ -26,8 +26,8 @@ def parse_args():
     return parser.parse_args()
 
 
-async def main():
-    """Main entry point for the server."""
+async def async_main():
+    """Async main entry point for the server."""
     args = parse_args()
     
     # Determine which profile to use
@@ -46,5 +46,10 @@ async def main():
         sys.exit(1)
 
 
+def main():
+    """Synchronous entry point for console script."""
+    asyncio.run(async_main())
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
